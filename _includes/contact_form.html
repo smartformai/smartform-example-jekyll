@@ -1,0 +1,14 @@
+<form action="{{ site.smartform_form_id | prepend: 'https://api.usesmartform.com/api/v1/f/' }}" method="POST" class="smartform">
+  <p>
+    <label>Name<br><input  name="name"  required></label>
+  </p>
+  <p>
+    <label>Email<br><input name="email" type="email" required></label>
+  </p>
+  <p>
+    <label>Message<br><textarea name="message" required></textarea></label>
+  </p>
+  <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"
+         style="position:absolute;left:-9999px" aria-hidden="true" />
+  <p><button type="submit">Send</button></p>
+</form>
