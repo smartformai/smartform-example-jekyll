@@ -1,4 +1,4 @@
-# Jekyll contact form â€” Formspree alternative with AI spam filtering
+# Jekyll contact form â€?Formspree alternative with AI spam filtering
 
 Wire a contact form to [SmartForm AI](https://usesmartform.com) from a Jekyll site.
 
@@ -7,11 +7,11 @@ Wire a contact form to [SmartForm AI](https://usesmartform.com) from a Jekyll si
 The endpoint accepts a standard HTML form POST or JSON via AJAX. Two
 kinds of fields:
 
-**Your form fields** â€” `name`, `email`, `message`, whatever you
+**Your form fields** â€?`name`, `email`, `message`, whatever you
 want. Every non-reserved field lands in your dashboard as a column in
 the submissions table.
 
-**Reserved fields** â€” names starting with `_` are interpreted by
+**Reserved fields** â€?names starting with `_` are interpreted by
 the API, not stored:
 
 | Field | Purpose |
@@ -22,7 +22,7 @@ the API, not stored:
 | ``_subject`` | Override the AI-generated email subject line. Max 200 chars; control characters stripped. |
 | `X-Gotcha` header | Same as `_gotcha` for JSON requests where you can't add a hidden form field. |
 
-Field names are Formspree-compatible â€” migrating from
+Field names are Formspree-compatible â€?migrating from
 `formspree.io/f/{form_id}` requires no renaming.
 
 ## Setup
@@ -30,7 +30,7 @@ Field names are Formspree-compatible â€” migrating from
 1. Get a form ID at https://usesmartform.com/dashboard (8 chars, e.g. `f_abc12345`).
 2. Clone, install, configure, run:
    ```bash
-   git clone https://github.com/yanghuai123456/smartform-example-jekyll.git
+   git clone https://github.com/smartformai/smartform-example-jekyll.git
    cd smartform-example-jekyll
    bundle install
    bundle exec jekyll serve
@@ -39,7 +39,7 @@ Field names are Formspree-compatible â€” migrating from
 
 Add the form ID by editing `_config.yml`:
 ```yaml
-smartform_form_id: f_your_real_id
+smartform_form_id: your_real_id
 ```
 
 ## The form
@@ -58,12 +58,12 @@ Drop it into any layout with `{% include contact_form.html %}`.
 </form>
 ```
 
-The `_gotcha` field is a honeypot â€” bots fill it, humans never see it, SmartForm silently
+The `_gotcha` field is a honeypot â€?bots fill it, humans never see it, SmartForm silently
 discards those submissions.
 
 ## How the API works
 
-- `POST https://api.usesmartform.com/api/v1/f/{form_id}` â€” JSON or form-data, no API key.
+- `POST https://api.usesmartform.com/api/v1/f/{form_id}` â€?JSON or form-data, no API key.
 - Response: `{ success, message, submission_id, is_spam, intent, next_url }`.
 
 For the full contract, see https://usesmartform.com/docs.
@@ -82,7 +82,7 @@ bundle exec jekyll build    # static output in ./_site
 
 Yes. AI spam filtering is enabled by default on every plan. AI intent
 classification and high-value lead detection require a paid plan (Pro
-or Business) â€” the dashboard enforces this and returns HTTP 402 if
+or Business) â€?the dashboard enforces this and returns HTTP 402 if
 you try to enable them on a free workspace.
 
 ### Do I need an API key?
@@ -95,7 +95,7 @@ form ID, which is non-enumerable. The example also includes a hidden
 Yes. Jekyll builds static HTML and the form posts straight from the browser to the public endpoint. Deploy with the standard GitHub Pages pipeline.
 
 ## Related examples
-[Astro contact form](https://github.com/yanghuai123456/smartform-example-astro) | [Hugo contact form](https://github.com/yanghuai123456/smartform-example-hugo) | [Gatsby contact form](https://github.com/yanghuai123456/smartform-example-gatsby)
+[Astro contact form](https://github.com/smartformai/smartform-example-astro) | [Hugo contact form](https://github.com/smartformai/smartform-example-hugo) | [Gatsby contact form](https://github.com/smartformai/smartform-example-gatsby)
 
 
 ## License
